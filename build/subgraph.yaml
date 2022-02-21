@@ -16,7 +16,6 @@ dataSources:
       entities:
         - CreateNewFeature
         - HostCreated
-        - OwnershipTransferred
         - TicketBought
         - childCreated
       abis:
@@ -27,8 +26,6 @@ dataSources:
           handler: handleCreateNewFeature
         - event: HostCreated(address,string,string,string,string)
           handler: handleHostCreated
-        - event: OwnershipTransferred(indexed address,indexed address)
-          handler: handleOwnershipTransferred
         - event: TicketBought(address,address,uint256)
           handler: handleTicketBought
         - event: childCreated(string,uint256,uint256,string,address,string,string,string,address,string,address[],string)
