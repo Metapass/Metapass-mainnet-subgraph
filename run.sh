@@ -1,0 +1,1 @@
+npm run codegen && npm run build 

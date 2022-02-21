@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: MetaStorage
@@ -21,7 +21,7 @@ dataSources:
         - childCreated
       abis:
         - name: MetaStorage
-          file: ./abis/MetaStorage.json
+          file: MetaStorage/abis/MetaStorage.json
       eventHandlers:
         - event: CreateNewFeature(address)
           handler: handleCreateNewFeature
@@ -33,4 +33,4 @@ dataSources:
           handler: handleTicketBought
         - event: childCreated(string,uint256,uint256,string,address,string,string,string,address,string,address[],string)
           handler: handlechildCreated
-      file: ./src/mapping.ts
+      file: MetaStorage/MetaStorage.wasm
