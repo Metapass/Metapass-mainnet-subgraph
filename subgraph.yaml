@@ -1,0 +1,35 @@
+specVersion: 0.0.1
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: MetaStorage
+    network: matic
+    source:
+      address: "0x6a956a4C72203e111BA5B5d396bc0ad286AeBd9e"
+      abi: MetaStorage
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - CreateNewFeature
+        - HostCreated
+        - OwnershipTransferred
+        - TicketBought
+        - childCreated
+      abis:
+        - name: MetaStorage
+          file: ./abis/MetaStorage.json
+      eventHandlers:
+        - event: CreateNewFeature(address)
+          handler: handleCreateNewFeature
+        - event: HostCreated(address,string,string,string,string)
+          handler: handleHostCreated
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: TicketBought(address,address,uint256)
+          handler: handleTicketBought
+        - event: childCreated(string,uint256,uint256,string,address,string,string,string,address,string,address[],string)
+          handler: handlechildCreated
+      file: ./src/mapping.ts

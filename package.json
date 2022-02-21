@@ -1,0 +1,16 @@
+{
+  "name": "metapass-mainnet",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ anoushk1234/metapass-mainnet",
+    "create-local": "graph create --node http://localhost:8020/ anoushk1234/metapass-mainnet",
+    "remove-local": "graph remove --node http://localhost:8020/ anoushk1234/metapass-mainnet",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 anoushk1234/metapass-mainnet"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.25.1",
+    "@graphprotocol/graph-ts": "0.24.1"
+  }
+}
