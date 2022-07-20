@@ -173,6 +173,25 @@
     "type": "event"
   },
   {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "childContract",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "link",
+        "type": "string"
+      }
+    ],
+    "name": "linkUpdate",
+    "type": "event"
+  },
+  {
     "inputs": [
       {
         "internalType": "string",
@@ -209,6 +228,98 @@
       }
     ],
     "name": "createFeaturedEvent",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "detailsMap",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "image",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "link",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "fee",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "seats",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "occupiedSeats",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "date",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "childContract",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "eventHost",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "venue",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_event",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "_link",
+        "type": "string"
+      }
+    ],
+    "name": "emitLinkUpdate",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -340,6 +451,40 @@
         "internalType": "address",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "profileMap",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "profileImage",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "bio",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "socialLinks",
+        "type": "string"
       }
     ],
     "stateMutability": "view",

@@ -6,9 +6,9 @@ dataSources:
     name: MetaStorage
     network: matic
     source:
-      address: "0x6a956a4C72203e111BA5B5d396bc0ad286AeBd9e"
+      address: "0xEA24e80e4B7A22C2226F9730465Ca07Bc6d5Ab81"
       abi: MetaStorage
-      startBlock: 25195786
+      startBlock: 30065729
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -18,6 +18,7 @@ dataSources:
         - HostCreated
         - TicketBought
         - childCreated
+        - linkUpdate
       abis:
         - name: MetaStorage
           file: ./abis/MetaStorage.json
@@ -30,4 +31,6 @@ dataSources:
           handler: handleTicketBought
         - event: childCreated(string,uint256,uint256,string,address,string,string,string,address,string,address[],string)
           handler: handlechildCreated
+        - event: linkUpdate(address,string)
+          handler: handleUpdateLink
       file: ./src/mapping.ts
